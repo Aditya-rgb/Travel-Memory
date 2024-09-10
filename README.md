@@ -207,7 +207,7 @@ This document outlines the steps to deploy the Travel Memory application using A
     - Clicked on `Create Target Group`.
 
 3. **Created the Load Balancer:**
-    - Returned to `Load Balancers` and clicked on `Create Load Balancer`.
+    - Returned to `Load Balancers` , chose the Target group I created above and clicked on `Create Load Balancer`.
 
 4. **Tested the Load Balancer:**
     - Copied the DNS name of the load balancer (`Aditya-TM-LB-1185255078.us-west-2.elb.amazonaws.com`) and pasted it into the browser.
