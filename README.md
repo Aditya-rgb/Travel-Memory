@@ -160,7 +160,7 @@ This document outlines the steps to deploy the Travel Memory application using A
         proxy_set_header X-Forwarded-Proto $scheme;
     }
     ```
-![Alt Text](images/Reverse Proxy configs for 2nd instance.JPG)
+![Alt Text](images/Reverse-Proxy-configs.JPG)
 
 
 5. Restarted and tested Nginx:
