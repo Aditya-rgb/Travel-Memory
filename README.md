@@ -77,3 +77,12 @@ This document outlines the steps to deploy the Travel Memory application using A
    node index.js # Start the backend server
    ```
    Output on the EC2 inside : Server started at http://localhost:3001
+   Now, went back to AWS console, when to my instance, went to "Security", went inside my security, clicked on edit inbound rules and added the below port details:
+   ```bash
+   custom-TCP TCP 3001 Custom 0.0.0.0/0
+   ```
+     
+   Copied the public IP Address of the EC2 instance, went to the browser and pasted the below url :
+   ```bash
+   http://35.95.79.227:3001/
+   ```
