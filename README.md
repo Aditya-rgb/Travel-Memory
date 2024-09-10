@@ -1,8 +1,4 @@
 
-# Travel Memory
-
-`.env` file to work with the backend after creating a database in mongodb: 
-
 # Travel Memory Application Deployment with AWS Services
 
 ## Overview
