@@ -277,3 +277,26 @@ This document outlines the steps to deploy the Travel Memory application using A
 
 ![Alt Text](images/TM-Domain-Cloudfare-FINAL.JPG)
 
+
+
+## Contributing
+
+We welcome contributions! To contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes with clear messages.
+4. Submit a pull request for review.
+
+Make sure to follow the code style guidelines and include proper documentation for any new features.
+
+
+## Contact
+
+For any queries, feel free to contact me:
+
+- **Email:** adityavakharia@gmail.com
+- **GitHub:** [Aditya-rgb](https://github.com/Aditya-rgb/Travel-Memory)
+
+You can also open an issue in the repository for questions or suggestions.
+
