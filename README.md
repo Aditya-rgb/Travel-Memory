@@ -12,6 +12,11 @@ This document outlines the steps to deploy the Travel Memory application using A
 - Integrating Nginx to serve the application on port 80.
 - Attaching an AWS Load Balancer and setting up a domain on Cloudflare.
 
+## Architectural flow for Travel-Memory
+
+![Architecture Diagram](images/TM-Flow-Diagram.drawio)
+
+
 ## Setting up the Application on AWS EC2 Instance
 
 1. **Launch EC2 Instance**: 
