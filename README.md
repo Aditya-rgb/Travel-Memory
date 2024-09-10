@@ -304,5 +304,3 @@ For any queries, feel free to contact me:
 - **GitHub:** [Aditya-rgb](https://github.com/Aditya-rgb/Travel-Memory)
 
 You can also open an issue in the repository for questions or suggestions.
-
->>>>>>> 0c6604313f5f5dd24924d28fc10707721e76978f
