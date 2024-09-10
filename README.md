@@ -188,6 +188,8 @@ This document outlines the steps to deploy the Travel Memory application using A
     - In the AWS console, verified that two instances now exist for the Travel Memory application under the same instance name:
         - `Aditya-TM: 35.87.195.45` (2nd server made from template)
         - `Aditya-TM: 35.95.79.227` (1st server)
+    - In the second instance, the Travel Memory Application was deployed and hosted again and again a Reverse proxy i.e nginx was set up for this second deployment.
+    - So now, we have two instances running the Travel Memory application through reverse proxy nginx.
 
 ## Creating and attaching the Load Balancer to the 2 instances I created for our travel memory aplication in AWS.
 
@@ -202,7 +204,7 @@ This document outlines the steps to deploy the Travel Memory application using A
 2. **Created a Target Group:**
     - Under `Listeners and routing`, created a Target Group to include all instances running the Travel Memory application.
     - Clicked on `Create a target group`.
-    - Selected the instances to be added to the target group.
+    - Selected the instances to be added to the target group. ( in our case selecting the two instances we created above as part of our target group. ) 
     - Set the port for routing traffic to the selected instances as `80` and clicked on `Include as pending`.
     - Clicked on `Create Target Group`.
 
