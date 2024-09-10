@@ -231,6 +231,11 @@ This document outlines the steps to deploy the Travel Memory application using A
     - Verified that the Travel Memory application was working.
 
 
+![Load-Balancer](images/TM-HOSTED-LB.JPG)
+
+
+
+
 ## Domain Setup with Cloudflare
 
 1. **Bought a Domain from GoDaddy:**
