@@ -196,6 +196,16 @@ This document outlines the steps to deploy the Travel Memory application using A
     - In the second instance, the Travel Memory Application was deployed and hosted again and again a Reverse proxy i.e nginx was set up for this second deployment.
     - So now, we have two instances running the Travel Memory application through reverse proxy nginx.
 
+![First-server](images/TM-first-server.JPG)
+
+
+![Second Server](images/TM-second-server.JPG)
+
+
+
+
+
+
 ## Creating and attaching the Load Balancer to the 2 instances I created for our travel memory aplication in AWS.
 
 1. **Configured the Load Balancer:**
