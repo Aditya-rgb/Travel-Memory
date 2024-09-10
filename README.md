@@ -88,6 +88,8 @@ This document outlines the steps to deploy the Travel Memory application using A
    ```bash
    http://34.223.88.56:3001/
    ```
+ ![Alt Text](images/MongoDB-Snippet.JPG)
+
 
    ## Establishing the Connection Between the Frontend and Backend Code Bases
 
