@@ -86,3 +86,35 @@ This document outlines the steps to deploy the Travel Memory application using A
    ```bash
    http://35.95.79.227:3001/
    ```
+
+   ## Establishing the Connection Between the Frontend and Backend Code Bases
+
+1. Opened a new terminal on the same EC2 instance:
+    ```bash
+    cd /home/ubuntu/TravelMemory/
+    cd Frontend
+    cd src
+    nano url.js
+    ```
+
+2. Added the following lines to `url.js`:
+    ```javascript
+    export const baseUrl = process.env.REACT_APP_BACKEND_URL || "http://35.95.79.227:3001";
+    ```
+
+3. Started the frontend application:
+    ```bash
+    cd ..
+    npm start
+    ```
+    The public IP address of the EC2 instance where the backend application is hosted was pasted in the `url.js` file.
+
+4. Updated Security Group Rules:
+    - Went to the AWS console, navigated to the instance, then to "Security".
+    - Edited the inbound rules and added a new rule for port 3000.
+
+5. Verified the setup by pasting the following IP address into the browser:
+    ```plaintext
+    http://35.95.79.227:3000/
+    ```
+
