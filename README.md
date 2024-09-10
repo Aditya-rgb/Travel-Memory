@@ -14,7 +14,7 @@ This document outlines the steps to deploy the Travel Memory application using A
 
 ## Architectural flow for Travel-Memory
 
-![Architecture Diagram](images/TM-Flow-Diagram.drawio)
+![Architecture Diagram](images/TM-Architecture.JPG)
 
 
 ## Setting up the Application on AWS EC2 Instance
