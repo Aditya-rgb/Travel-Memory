@@ -250,3 +250,5 @@ This document outlines the steps to deploy the Travel Memory application using A
      ```
    - Successfully redirected to the AWS Load Balancer!
 
+![Alt Text](images/TM-Domain-Cloudfare-FINAL.JPG)
+
