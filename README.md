@@ -56,3 +56,24 @@ This document outlines the steps to deploy the Travel Memory application using A
    - Open the MongoDB Compass application on your desktop.
    - Paste the copied connection string into the **New Connection** field in Compass.
    - Click **Connect** to establish the connection with MongoDB Atlas.
+
+
+## Connecting the Backend Code to MongoDB and Hosting the Application
+
+### Steps to Connect the Backend to MongoDB
+
+1. **Navigate to the Backend Directory**:
+   After cloning the Travel Memory application repository on your EC2 instance, navigate to the backend directory:
+   ```bash
+   cd /home/ubuntu/TravelMemory/
+   cd Backend
+   sudo touch .env # Created an environment file to store sensitive information such as the MongoDB URI and port number:
+   nano .env
+   #Pasted the below lines inside .env file
+   #MONGO_URI='mongodb+srv://adityavakharia:Alphavak98@cluster0.7powl.mongodb.net/Travel-Memory-DB'
+   #PORT=3001
+   sudo apt install npm # Installed NPM and Dependencies and installed the necessary Node.js dependencies:
+   npm install
+   node index.js # Start the backend server
+   ```
+   Output on the EC2 inside : Server started at http://localhost:3001
