@@ -8,7 +8,7 @@ This document outlines the steps to deploy the Travel Memory application using A
 - Hosting the application on an EC2 instance.
 - Integrating it with Mongo DB Compass
 - Integrating both Front-end and Back-end code base on EC2
-- Creating multiple instances of the application.
+- Creating multiple instances of the application. using AWS Templates.
 - Integrating Nginx to serve the application on port 80.
 - Attaching an AWS Load Balancer and setting up a domain on Cloudflare.
 
