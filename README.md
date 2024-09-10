@@ -169,3 +169,45 @@ This document outlines the steps to deploy the Travel Memory application using A
     ```plaintext
     http://35.95.79.227:80
     ```
+
+
+    ## Creating multiple instances of both the frontend and backend servers.
+
+1. **Created a Launch Template from the Existing EC2 Instance:**
+    - Navigated to the existing EC2 instance created for the Travel Memory application.
+    - Went to `Actions` -> `Images & Templates` -> `Create template from instance`.
+    - Provided the name of the template as `Aditya-TM-Template`.
+    - Clicked on `Create launch template`.
+
+2. **Launched Instances from the Template:**
+    - Went to `Actions` -> `Launch instance from template`.
+    - Selected the source template name.
+    - Clicked on `Launch instance`.
+    - In the AWS console, verified that two instances now exist for the Travel Memory application under the same instance name:
+        - `Aditya-TM: 35.87.195.45` (2nd server made from template)
+        - `Aditya-TM: 35.95.79.227` (1st server)
+
+## Creating and attaching the Load Balancer to the 2 instances I created for our travel memory aplication in AWS.
+
+1. **Configured the Load Balancer:**
+    - Navigated to `Load Balancers` in the AWS GUI.
+    - Selected `ALB (Application Load Balancer)`.
+    - Set the load balancer name as `Aditya-TM-LB`.
+    - Selected the scheme `internet-facing`.
+    - Selected the load balancer IP address type as `IPv4`.
+    - For setting the availability zones, selected two AZs matching the AZs of the EC2 instances.
+
+2. **Created a Target Group:**
+    - Under `Listeners and routing`, created a Target Group to include all instances running the Travel Memory application.
+    - Clicked on `Create a target group`.
+    - Selected the instances to be added to the target group.
+    - Set the port for routing traffic to the selected instances as `80` and clicked on `Include as pending`.
+    - Clicked on `Create Target Group`.
+
+3. **Created the Load Balancer:**
+    - Returned to `Load Balancers` and clicked on `Create Load Balancer`.
+
+4. **Tested the Load Balancer:**
+    - Copied the DNS name of the load balancer (`Aditya-TM-LB-1185255078.us-west-2.elb.amazonaws.com`) and pasted it into the browser.
+    - Verified that the Travel Memory application was working.
+
