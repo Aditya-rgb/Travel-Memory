@@ -86,7 +86,7 @@ This document outlines the steps to deploy the Travel Memory application using A
      
    Copied the public IP Address of the EC2 instance, went to the browser and pasted the below url :
    ```bash
-   http://35.95.79.227:3001/
+   http://34.223.88.56:3001/
    ```
 
    ## Establishing the Connection Between the Frontend and Backend Code Bases
@@ -101,23 +101,24 @@ This document outlines the steps to deploy the Travel Memory application using A
 
 2. Added the following lines to `url.js`:
     ```javascript
-    export const baseUrl = process.env.REACT_APP_BACKEND_URL || "http://35.95.79.227:3001";
+    export const baseUrl = process.env.REACT_APP_BACKEND_URL || "http://34.223.88.56:3001/";
     ```
-
-3. Started the frontend application:
+3. The public IP address of the EC2 instance where the backend application is hosted was pasted in the `url.js` file.
+   
+4. Started the frontend application:
     ```bash
     cd ..
     npm start
     ```
-    The public IP address of the EC2 instance where the backend application is hosted was pasted in the `url.js` file.
+    
 
-4. Updated Security Group Rules:
+5. Updated Security Group Rules:
     - Went to the AWS console, navigated to the instance, then to "Security".
-    - Edited the inbound rules and added a new rule for port 3000.
+    - Edited the inbound rules and added a new rule for port 3000 and 3001 too.
 
-5. Verified the setup by pasting the following IP address into the browser:
+6. Verified the setup by pasting the following IP address into the browser:
     ```plaintext
-    http://35.95.79.227:3000/
+    http://34.223.88.56:3000/";
     ```
 
 ## Creating a Reverse Proxy Using Nginx for the Travel Memory Application
@@ -152,7 +153,7 @@ This document outlines the steps to deploy the Travel Memory application using A
         # First attempt to serve request as file, then
         # as directory, then fall back to displaying a 404.
         #try_files $uri $uri/ =404;
-        proxy_pass http://35.95.79.227:3000;  # Public IP address of the EC2 instance where the application is hosted.
+        proxy_pass http://34.223.88.56:3001/";  # Public IP address of the EC2 instance where the application is hosted.
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -169,7 +170,7 @@ This document outlines the steps to deploy the Travel Memory application using A
 
 6. Tested the reverse proxy by navigating to the following URL in the browser:
     ```plaintext
-    http://35.95.79.227:80
+    http://34.223.88.56:3001:80/
     ```
 
 
@@ -186,8 +187,8 @@ This document outlines the steps to deploy the Travel Memory application using A
     - Selected the source template name.
     - Clicked on `Launch instance`.
     - In the AWS console, verified that two instances now exist for the Travel Memory application under the same instance name:
-        - `Aditya-TM: 35.87.195.45` (2nd server made from template)
-        - `Aditya-TM: 35.95.79.227` (1st server)
+        - `Aditya-TM: 34.223.88.56` (1st server)
+        - `Aditya-TM: 35.95.120.226`(2nd server made from template)
     - In the second instance, the Travel Memory Application was deployed and hosted again and again a Reverse proxy i.e nginx was set up for this second deployment.
     - So now, we have two instances running the Travel Memory application through reverse proxy nginx.
 
