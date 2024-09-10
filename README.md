@@ -216,3 +216,37 @@ This document outlines the steps to deploy the Travel Memory application using A
     - Copied the DNS name of the load balancer (`Aditya-TM-LB-1185255078.us-west-2.elb.amazonaws.com`) and pasted it into the browser.
     - Verified that the Travel Memory application was working.
 
+
+## Domain Setup with Cloudflare
+
+1. **Bought a Domain from GoDaddy:**
+   - Domain Name: `aditya-domain.xyz`
+   
+2. **Created an Account on Cloudflare:**
+   - Signed up and logged into Cloudflare.
+
+3. **Adding the Domain to Cloudflare:**
+   - Clicked on **+ Add a Site**.
+   - Entered the bought domain: `aditya-domain.xyz`.
+
+4. **Updated Nameservers on GoDaddy:**
+   - Logged into GoDaddy.
+   - Went to **DNS Settings** of the domain `aditya-domain.xyz`.
+   - Removed the default GoDaddy nameservers.
+   - Added the Cloudflare nameservers under **Custom Nameservers** in GoDaddy.
+   - Waited around 30 minutes for the nameserver updates to propagate to Cloudflare.
+
+5. **Adding DNS Record in Cloudflare:**
+   - Inside the domain settings for `aditya-domain.xyz`, clicked on **DNS**.
+   - Clicked **Add Record** and entered the following:
+     - **Type:** CNAME
+     - **Name:** `tm-aditya`
+     - **Target:** `<Load Balancer DNS Name>` (replace with your AWS load balancer DNS)
+
+6. **Accessing the Domain:**
+   - Opened the browser and entered: 
+     ```
+     http://tm-aditya.aditya-domain.xyz/
+     ```
+   - Successfully redirected to the AWS Load Balancer!
+
