@@ -255,6 +255,12 @@ This document outlines the steps to deploy the Travel Memory application using A
    - Added the Cloudflare nameservers under **Custom Nameservers** in GoDaddy.
    - Waited around 30 minutes for the nameserver updates to propagate to Cloudflare.
 
+![Cloudfare](images/TM-Cloudfare-GoDaddy.JPG)
+
+
+
+
+
 5. **Adding DNS Record in Cloudflare:**
    - Inside the domain settings for `aditya-domain.xyz`, clicked on **DNS**.
    - Clicked **Add Record** and entered the following:
