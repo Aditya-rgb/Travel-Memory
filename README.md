@@ -118,3 +118,54 @@ This document outlines the steps to deploy the Travel Memory application using A
     http://35.95.79.227:3000/
     ```
 
+## Creating a Reverse Proxy Using Nginx for the Travel Memory Application
+
+1. Installed and set up Nginx on the EC2 instance:
+    ```bash
+    sudo apt-get update
+    sudo apt-get install nginx
+    ```
+
+2. Edited the Nginx configuration:
+    ```bash
+    cd /etc/nginx/sites-enabled
+    sudo nano default
+    ```
+
+3. Commented out the default configuration lines:
+    ```nginx
+    #root /var/www/html;
+    #index index.html index.htm index.nginx-debian.html;
+    #index index.html index.htm index.nginx-debian.html;
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        #try_files $uri $uri/ =404;
+    }
+    ```
+
+4. Added the following configuration to proxy requests:
+    ```nginx
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        #try_files $uri $uri/ =404;
+        proxy_pass http://35.95.79.227:3000;  # Public IP address of the EC2 instance where the application is hosted.
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+    ```
+
+5. Restarted and tested Nginx:
+    ```bash
+    sudo service nginx start
+    sudo service nginx reload
+    sudo nginx -t
+    ```
+
+6. Tested the reverse proxy by navigating to the following URL in the browser:
+    ```plaintext
+    http://35.95.79.227:80
+    ```
